@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-8">
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="w-full max-w-6xl min-h-[760px] bg-white rounded-[24px] shadow-2xl overflow-hidden flex flex-col lg:flex-row mx-auto">
+        <!-- PANEL IZQUIERDO -->
+
+        <section class="lg:w-[44%] min-h-[320px] lg:min-h-[560px] bg-gradient-to-br from-blue-600 via-cyan-500 to-emerald-400 text-white p-8 lg:p-10 flex flex-col">
+            <!-- VOLVER AL INICIO -->
+            <a href="./index.html" class="flex items-center gap-2 text-sm font-medium hover:opacity-80 transition w-fit">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                <span>Volver al inicio
+                </span>
+            </a>
+
+            <!-- CONTENIDO CENTRAL -->
+            <div class="flex-1 flex flex-col items-center justify-center text-center">
+                <!-- LOGO -->
+            <div class="w-32 h-32 mb-5 rounded-[24px] overflow-hidden flex items-center justify-center">
+                <img
+                src="./img/logo.png"
+                alt="Logo MediStock"
+                class="w-full h-full object-contain rounded-[24px]">
+            </div>
+                <!-- NOMBRE -->
+                <h1 class="text-4xl lg:text-5xl font-bold tracking-tight">MediStock</h1>
+
+                <!-- DESCRIPCION -->
+                <p class="mt-4 text-base lg:text-lg max-w-xs leading-relaxed">Bienvenidos al sistema de gestion de medicamentos</p>
+            </div>
+        </section>
+
+        <!-- PANEL DERECHO -->
+        <section class="lg:w-[56%] bg-white p-7 sm:p-10' lg:p-12 flex items-center justify-center">
+            <div class="w-full max-w-md">
+                <div class="text-center mb-15">
+                    <h2 class="text-4xl font-bold text-gray-900">Inicar Sesion</h2>
+                    <div class="w-16 h-1 bg-emerald-500 rounded-full mx-auto mt-4"></div>
+                </div>
+                <!-- FORMULARIO -->
+                <form class="w_full space-y-5">
+                    <!-- USUARIO -->
+                    <div class="relative w-full">
+                        <i data-lucide="user"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-600"></i>
+
+                        <input type="text"
+                        id="usuario"
+                        placeholder="Ingrese su usuario"
+                        class="w-full h-14 box-border pl-12 pr-4 border border-gray-300 rounded-xl outline-none focus:border-blue-600">
+                    </div>
+
+                    <!-- CONTRASEÑA -->
+                    <div class="relative">
+                        <i data-lucide="lock"
+                        class="absolute left-4 top-7 -translate-y-3  w-5 h-5 text-blue-600"></i>
+                        <input type="password" id="password" placeholder="Ingrese su contraseña"
+                        class="w-full h-14 pl-12 pr-12 border border-gray-300 rounded-xl outline-none text-gray-700 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+
+                        <!-- Mostrar contraseña -->
+                        <button type="button"
+                        onclick="mostrarPassword()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 hover:text-blue-600">
+                            <i id="eyelcon"
+                            data-lucide="eye"
+                            class="w-5 h-5"></i>
+                    </button>
+                    </div>
+
+                    <!-- OLVIDASTE CONTRASEÑA -->
+                    <div class="flex justify-end">
+                        <a href="#" class="text-sm font-medium text-blue-900 hover:text-blue-600 transition">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- BOTON INICIAR SESION -->
+                    <button type="submit"
+                    class="w-full h-14 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold rounded-xl transition-all shadow-md">Inicar Sesión</button>
+
+                    <!-- SEPARADOR -->
+                    <div class="flex items-center gap-4 py-1">
+                        <div class="h-px bg-gray-300 flex-1"></div>
+                        <span class="text-sm text-gray-600 whitespace-nowrap">o continua con</span>
+                        <div class="h-px bg-gray-300 flex-1"></div>
+                    </div>
+
+                    <!-- GOOGLE Y MICROSOFT -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-13">
+
+                        <!-- GOOGLE -->
+                        <button type="button"
+                        class="h-12 border border-gray-300 rounded-xl flex items-center justify-center gap-3 text-gray-700 font-medium hover:bg-gray-50 transition">
+                            <span class="font-bold text-lg">G</span>Google
+                    </button>
+
+                    <!-- MICROSOFT -->
+                    <button type="button"
+                    class="h-12 border border-gray-300 rounded-xl flex items-center justify-center gap-3 text-gray-700 font-medium hover:bg-gray-50 transition">
+                        <span class="grid grid-cols-2 gap-[2px]">
+                            <span class="w-[6px] h-[6px] bg-gray-800"></span>
+                            <span class="w-[6px] h-[6px] bg-gray-800"></span>
+                            <span class="w-[6px] h-[6px] bg-gray-800"></span>
+                            <span class="w-[6px] h-[6px] bg-gray-800"></span>
+                        </span>Microsoft
+                </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- MOSTRAR CONTRASEÑA -->
+    <script>
+        function mostrarPassword() {
+            const password = document.getElementById("password");
+            const eyeIcon = document.getElementById("eyeIcon");
+
+            if (password.type === "password") {
+                password.type = "text";
+                eyeIcon.setAttribute("data-lucide", "eye-off");
+            } else {
+                password.type = "password";
+                eyeIcon.setAttribute("data-lucide", "eye");
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</body>
+</html>
