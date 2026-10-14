@@ -9,13 +9,16 @@
 </head>
 <body class="font-sans bg-gray-50 text-slate-800 m-0 p-0 antialiased">
 
-    <!-- ================= NAVBAR ================= -->
-    <header class="sticky top-0 z-50 flex items-center justify-between bg-white px-6 py-4 shadow-md md:px-10">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <img src="./img/logo-MediS.png" alt="MediStock" class="h-8 w-8 rounded-md object-cover">
-            <h2 class="text-2xl font-extrabold text-blue-600">MediStock</h2> 
-        </div>
+<!-- ================= NAVBAR / HEADER CENTRADO ================= -->
+<header class="sticky top-0 z-50 w-full bg-white shadow-sm backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        
+        <!-- Logo y Nombre de la Marca -->
+        <a href="#Inicio" class="flex items-center gap-3 transition-opacity hover:opacity-90">
+            <img src="img/logo.png" alt="MediStock" class="h-9 w-9 rounded-lg object-cover">
+            <span class="text-2xl font-extrabold tracking-tight text-blue-600">MediStock</span>
+        </a>
+
 
         <!-- Botón Menú Móvil (Hamburguesa) -->
         <button id="menu-btn" onclick="mostrarOcultarMenu()" class="text-blue-600 focus:outline-none md:hidden" aria-label="Abrir menú">
@@ -311,7 +314,7 @@
         <div class="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-slate-500 sm:flex-row">
             <p>© 2026 MediStock. Todos los derechos reservados.</p>
             <p class="font-medium text-slate-400">
-                Desarrollado por: <span class="text-slate-200">Sergio Bolaños M.</span> & <span class="text-slate-200">Jofren Murillo</span>
+                Desarrollado por: <a href="https://bolanossergio.github.io/Portafolio/" target="_blank">Sergio Bolaños M.</a> & <a href="https://thejofren-jpg.github.io/repositorio/" target="_blank">Jofren Murillo.</a> 
             </p>
         </div>
     </div>
